@@ -1,0 +1,21 @@
+.timer-container{
+    background-color: rgba(10, 130, 163, 0.942);
+  border-radius: 16px;
+  padding: 30px 50px 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.clock-text{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+.timer{
+    color: white;
+  font-size: 50px;
+  margin: 20px;
+  font-family: 'Roboto';
+}

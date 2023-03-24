@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Clock from "./Components/Clock"
+import { Component } from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css'
+
+class App extends Component {
+  state = {showClock: false}
+
+  onToggleClock = () => {
+    this.setState(prevState => {
+      const {showClock} = prevState
+      return {
+        showClock: !showClock,
+      }
+    })
+  }
+  render() {
+    const {showClock} = this.state
+    return (
+      <div className="clock-bg">
+        <button type="button" onClick={this.onToggleClock} className="button">
+          {showClock ? "Hide Clock" : "Show Clock"}
+        </button>
+        {showClock && <Clock />}
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
